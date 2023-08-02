@@ -1,9 +1,15 @@
 # flights-fullstack
 
-Fullstack CRUD application using Angular as frontend and .Net backend written in C#
+Fullstack CRUD application
 
 ## Tech Stack
 
+###Frontend
+
 - Angular 16
+- Typescript
+
+###Backend
+
 - C#
-- DotNet 7
+- ASP.NET Core 7
