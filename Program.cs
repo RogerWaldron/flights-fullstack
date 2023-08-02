@@ -1,10 +1,29 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿
+using Microsoft.OpenApi.Models;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.DescribeAllParametersInCamelCase();
+
+    c.AddServer(new OpenApiServer
+    {
+        Description = "Development server",
+        Url = "https://localhost:7223"
+    });
+
+    c.CustomOperationIds(e => $"{e.ActionDescriptor.RouteValues["action"] + e.ActionDescriptor.RouteValues["controller"]}");
+});
 
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwagger().UseSwaggerUI();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
