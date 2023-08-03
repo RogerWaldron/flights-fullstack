@@ -9,7 +9,7 @@ namespace flights_fullstack.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class BookingController : Controller
+    public class BookingController : ControllerBase
     {
         [HttpGet("{email}")]
         [ProducesResponseType(500)]
