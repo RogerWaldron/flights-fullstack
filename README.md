@@ -4,12 +4,12 @@ Fullstack CRUD application
 
 ## Tech Stack
 
-###Frontend
+### Frontend
 
 - Angular 16
 - Typescript
 
-###Backend
+### Backend
 
 - C#
 - ASP.NET Core 7
